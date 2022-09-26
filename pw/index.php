@@ -43,7 +43,7 @@ $buku = $rows
 			<td><img src="img/<?= $bk['gambar']; ?>" width="60"></td>
 			<td><?= $bk['judul']; ?></td>
 			<td>
-				<a href="detail.php?id=<?= $bk['id'];?>">lihat detail</a>
+				<a href="detail.php?id=<?= $bk['id'];?>">detail buku</a>
 			</td>
 		</tr>
 		<?php endforeach; ?>
