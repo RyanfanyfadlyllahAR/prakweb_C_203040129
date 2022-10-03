@@ -29,15 +29,17 @@ function tambah($data)
     $conn = koneksi();
 
     $gambar = htmlspecialchars($data['gambar']);
-    $nama = htmlspecialchars($data['nama']);
+    $judul = htmlspecialchars($data['judul']);
     $penulis  = htmlspecialchars($data['penulis']);
+    $jumlah_halaman  = htmlspecialchars($data['jumlah_halaman']);
+    $tahun_terbit  = htmlspecialchars($data['tahun_terbit']);
     
   
 
     $query = "INSERT INTO
                buku
                 VALUES
-                (null, '$nama', '$penulis', '$judul',);
+                ('', '$gambar', '$judul', '$penulis', '$jumlah_halaman','$tahun_terbit');
                 ";
     mysqli_query($conn, $query);
     echo mysqli_error($conn);
@@ -46,7 +48,7 @@ function tambah($data)
 
 function hapus($id){
  $conn = koneksi();
- mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id") or die(mysqli_error($conn));
+ mysqli_query($conn, "DELETE FROM buku WHERE id = $id") or die(mysqli_error($conn));
  return mysqli_affected_rows($conn);
 }
 
@@ -58,10 +60,10 @@ function ubah($data)
 
     $id = $data['id'];
     $img = htmlspecialchars($data['img']);
-    $nama = htmlspecialchars($data['nama']);
-    $nrp  = htmlspecialchars($data['nrp']);
-    $email = htmlspecialchars($data['email']);
-    $jurusan = htmlspecialchars($data['jurusan']);
+    $judul = htmlspecialchars($data['judul']);
+    $jumlah_halaman  = htmlspecialchars($data['jumlah_halaman']);
+    $tahun_terbit = htmlspecialchars($data['tahun_terbit']);
+    $penulis = htmlspecialchars($data['penulis']);
    
 
     $query = "UPDATE buku SET
@@ -79,7 +81,7 @@ function cari($keyword) {
     $query = "SELECT * FROM buku 
                 WHERE
                  nama LIKE '%$keyword%' OR 
-                nrp LIKE '%$keyword%'
+                judul LIKE '%$keyword%'
                 ";
     $result = mysqli_query($conn, $query);
         $rows = [];

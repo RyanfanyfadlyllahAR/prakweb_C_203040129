@@ -32,7 +32,7 @@ $buku = $rows
 	<table border="1" cellpadding="10" cellspacing="0">
 		<tr>
 			<th>id</th>
-			<th>Gambar</th>
+			<th>gambar</th>
 			<th>judul</th>
 			<th>penulis</th>
 		</tr>
