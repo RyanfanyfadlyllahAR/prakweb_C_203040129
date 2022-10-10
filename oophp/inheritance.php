@@ -29,8 +29,6 @@ class Produk {
     public function getinfoproduk() {
      $str = "{$this->judul} | {$this->getlabel()} (Rp.{$this->harga})";
 
-    
-
         return $str;
  }
 
